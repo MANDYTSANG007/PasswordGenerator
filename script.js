@@ -1,6 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");  //this will generate button every time (point to the first element in the document)
-
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numeric = "0123456789";
+var special = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"; // using backslash escape character to treat " specially 
 
 
 
@@ -14,7 +17,7 @@ function writePassword() {
 }
 //if user choose the password length
 function howMany(selectLength){
-  var lengthSelected = 0; //set lengthSelect=0 right at the beginning when user hasn't selected the length of the pw
+  var lengthSelected = 0; //set lengthSelected=0 right at the beginning when user hasn't selected the length of the pw
   prompt("How many characters would you like your password to contain?");
   for(i=8; i<=128; i++) { //set password length between the range of 8 and 128
     if (selectLength <= 8){
@@ -23,7 +26,16 @@ function howMany(selectLength){
       alert("Password length must be no more than 128 characters.")
     }else {
       return lengthSelected; //store the selected length to the variable lengthSelected
-
+    }
+  }
+//if user confirm whether or not to include lowercase 
+function lowercase(selectLowercase){
+  var lowercaseConfirmed = "";
+  if (confirm("Click OK to confirm including lowercase characters.") == true){  //get a Boolean result using confirm method
+    return lowercaseConfirmed;
+  }else{
+    return
+  }
 }
 
 
