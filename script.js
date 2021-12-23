@@ -28,6 +28,16 @@ function howMany(selectLength){
       return lengthSelected; //store the selected length to the variable lengthSelected
     }
   }
+console.log (lengthSelected);
+//if user confirm whether or not to include uppercase 
+function uppercase(selectUppercase){
+  var uppercaseConfirmed = "";
+  if (confirm("Click OK to confirm including uppercase characters.") == true){  //get a Boolean result using confirm method
+    return uppercaseConfirmed;
+  }else{
+    return
+  }
+}
 //if user confirm whether or not to include lowercase 
 function lowercase(selectLowercase){
   var lowercaseConfirmed = "";
@@ -37,11 +47,30 @@ function lowercase(selectLowercase){
     return
   }
 }
+//if user confirm whether or not to include numeric 
+function numeric(selectNumeric){
+  var numericConfirmed = "";
+  if (confirm("Click OK to confirm including numeric numbers.") == true){  //get a Boolean result using confirm method
+    return numericConfirmed;
+  }else{
+    return
+  }
+}
+//if user confirm whether or not to include special characters 
+function special(selectSpecial){
+  var specialConfirmed = "";
+  if (confirm("Click OK to confirm including special characters.") == true){  //get a Boolean result using confirm method
+    return specialConfirmed;
+  }else{
+    return
+  }
+}
+
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-  document.getElementById("password")
+  //document.getElementById("password")
 /* pseudocode
 1. create record for passwordLength selection
 2. create record for lowercase selection
