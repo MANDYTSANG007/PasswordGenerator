@@ -3,25 +3,43 @@ var generateBtn = document.querySelector("#generate");  //this will generate but
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numeric = "0123456789";
-var special = "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"; // use backslash escape character to treat " specially 
+var specialCh = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"; // use backslash escape character to treat " specially 
 
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password; //.value -> return the value property
-}
+  if (password != null) { 
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password; //.value -> return the value property
+  }
+};
 //outcome of user's selections
 function afterPasswordButtonClick(){
   var password_length = howMany(); //return integer
   var confirm_uppercase = upperCase(); //return boolean
   var confirm_lowercase = lowerCase(); //return boolean
   var confirm_numeric = numericNum(); //return boolean
-  var confirm_special = special() //return boolean
+  var confirm_special = special(); //return boolean
+  var totalCharacters = ""; //create an empty string, since we don't know what user's selection is going to be
+  if (confirm_uppercase){ //if confirm_uppercase is true
+    totalCharacters += uppercase;   //add uppercase into totalCharacters' string
+  }
+  if (confirm_lowercase){
+    totalCharacters += lowercase;
+  }
+  if (confirm_numeric){
+    totalCharacters += numeric;
+  }
+  if (confirm_special){
+    totalCharacters += specialCh;
+  }
+  
   var password = generatePassword(password_length, confirm_uppercase, confirm_lowercase, confirm_numeric, confirm_special) 
-
+  for (i=0; i<=password_length.length; i++){ //create loop to generate one character at a time
+    var character = Math.floor(Math.random()*totalCharacters);//randomly generate password within the character string
+    password += character;//password = password + character
+  };
   //if user choose the password length
   function howMany() {
     var selectLength = prompt("How many characters would you like your password to contain?"); //set lengthSelected=0 right at the beginning when user hasn't selected the length of the pw
@@ -61,10 +79,9 @@ function afterPasswordButtonClick(){
     var confirmSpecial = confirm("Click OK to confirm including special characters.");
     if (confirmSpecial == true) {  //get a Boolean result using confirm method
       return confirm_special;
-  }
-};
-
-
+    }
+  };
+}
 
 
 // Add event listener to generate button
