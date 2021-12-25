@@ -7,40 +7,51 @@ var specialCh = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"; // use backslash escape ch
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  if (password != null) { 
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password; //.value -> return the value property
-  }
+function writePassword(password) {
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password; //.value -> return the value property
 };
-//outcome of user's selections
-function afterPasswordButtonClick(){
-  var password_length = howMany(); //return integer
-  var confirm_uppercase = upperCase(); //return boolean
-  var confirm_lowercase = lowerCase(); //return boolean
-  var confirm_numeric = numericNum(); //return boolean
-  var confirm_special = special(); //return boolean
+function generatePassword(passwordLength, confirmUppercase, confirmLowercase, confirmNumeric, confirmSpecial){
   var totalCharacters = ""; //create an empty string, since we don't know what user's selection is going to be
-  if (confirm_uppercase){ //if confirm_uppercase is true
+  if (confirmUppercase){ //if confirm_uppercase is true
     totalCharacters += uppercase;   //add uppercase into totalCharacters' string
   }
-  if (confirm_lowercase){
+  if (confirmLowercase){
     totalCharacters += lowercase;
   }
-  if (confirm_numeric){
+  if (confirmNumeric){
     totalCharacters += numeric;
   }
-  if (confirm_special){
+  if (confirmSpecial){
     totalCharacters += specialCh;
   }
-  
-  var password = generatePassword(password_length, confirm_uppercase, confirm_lowercase, confirm_numeric, confirm_special) 
-  for (i=0; i<=password_length.length; i++){ //create loop to generate one character at a time
-    var character = Math.floor(Math.random()*totalCharacters);//randomly generate password within the character string
+
+  var password = "";
+  for (i=0; i<=passwordLength; i++){ //create loop to generate one character at a time
+    var index = Math.floor(Math.random()*totalCharacters.length);//randomly generate password within the character string
+    var character = totalCharacters[index];
     password += character;//password = password + character
   };
-  //if user choose the password length
+  return password;
+}
+//outcome of user's selections
+function afterPasswordButtonClick(){
+  var passwordLength = howMany(); //return number
+  var confirmUppercase = upperCase(); //return boolean
+  var confirmLowercase = lowerCase(); //return boolean
+  var confirmNumeric = numericNum(); //return boolean
+  var confirmSpecial = special(); //return boolean
+
+  //measure if user clicked at least one of the character type
+  if (confirmUppercase || confirmLowercase || confirmNumeric || confirmSpecial == true){
+  } else {
+    alert("At lease one of the character type must be selected.");
+    return;
+  }
+  var password = generatePassword(passwordLength, confirmUppercase, confirmLowercase, confirmNumeric, confirmSpecial);
+  writePassword(password);
+
+  //user choose the password length
   function howMany() {
     var selectLength = prompt("How many characters would you like your password to contain?"); //set lengthSelected=0 right at the beginning when user hasn't selected the length of the pw
     if (selectLength < 8){
@@ -50,42 +61,49 @@ function afterPasswordButtonClick(){
       alert("Password length must be no more than 128 characters.")
       return howMany();
     }else {
-      return password_length;
+      return selectLength;
     }
   };
-  //if user confirm whether or not to include uppercase 
+  //user confirm whether or not to include uppercase 
   function upperCase() {
     var confirmUppercase = confirm("Click OK to confirm including uppercase characters.");
     if (confirmUppercase == true) {  //get a Boolean result using confirm method
-      return confirm_uppercase;
+      return confirmUppercase;
     }
   };
-  //if user confirm whether or not to include lowercase 
+  //user confirm whether or not to include lowercase 
   function lowerCase() {
     var confirmLowercase = confirm("Click OK to confirm including lowercase characters.");
     if (confirmLowercase == true) {  //get a Boolean result using confirm method
-      return confirm_lowercase;
+      return confirmLowercase;
     }
   };
-  //if user confirm whether or not to include numeric 
+  //user confirm whether or not to include numeric 
   function numericNum() {
     var confirmNumeric = confirm("Click OK to confirm including numeric numbers.");
     if (confirmNumeric == true) {  //get a Boolean result using confirm method
-      return confirm_numeric;
+      return confirmNumeric;
     }
   };
-  //if user confirm whether or not to include special characters 
+  //user confirm whether or not to include special characters 
   function special() {
     var confirmSpecial = confirm("Click OK to confirm including special characters.");
     if (confirmSpecial == true) {  //get a Boolean result using confirm method
-      return confirm_special;
+      return confirmSpecial;
     }
   };
 }
-
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", afterPasswordButtonClick);
+
+
+
+
+
+
+
+
+
 
 /* pseudocode
 1. create record for passwordLength selection
@@ -116,9 +134,9 @@ generateBtn.addEventListener("click", writePassword);
   -if user clicks cancel, it returns false
 9.check if at least one character type (at least one true is returned) is selected
 10. if not , prompt "at least one character type must be selected"
-11. if yes (meaning when all prompts are answered), the pw is generated
-  -first character of pw is generated
-  -second character of pw is generated
-  -repeat the step until it reaches the length of the password
-12. displays the password generated by the system
+11. if yes (meaning when all prompts are answered), the pw is randomly generated
+  -first character of pw is generated randomly
+  -second character of pw is generated randomly
+  -repeat the step/s until it reaches the length of the password
+12. displays the password generated by the generator
 */
