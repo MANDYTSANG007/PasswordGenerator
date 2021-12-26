@@ -5,7 +5,7 @@ This Password Generator project is modified using JavaScript. It allows employee
 
 ## Getting Started
 
-When it runs on a browser, a prompt will displayed asking user to make their choice of their password length. Users must choose the length between 8 and 128. If they choose less than 8 or greater than 128, an alert will be displayed. Once they selected the length, the program will confirm whether the users like to include lowercase, uppercase, numeric number, or special characters in their password. 
+When it runs on a browser, a prompt will be displayed asking the user to make a choice of the password length. The user must choose the length between 8 and 128. If they choose less than 8 or greater than 128, an alert will be displayed. Once they select the length, the program will confirm whether the users like to include lowercase, uppercase, numeric number, or special characters in their password. 
 
 Before generating a password, this program will check if at least one character was selected. If not, an alert will be displayed to remind users that they must choose at least one character. A random password will be generated after all criteria are met. 
 
@@ -15,29 +15,25 @@ Before generating a password, this program will check if at least one character 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [w3school]()
+* [w3schools](https://www.w3schools.com/js/default.asp)
+
 
 ## Deployed Link
 
-* [See Live Site](#)
+* [Deployed Link to Live Site](#)
+* [Link to Github](#)
 
 
 ## Authors
 
-* **YOUR NAME** 
+* **Mandy Tsang** 
 
-- [Link to Portfolio Site](#)
-- [Link to Github](https://github.com/)
-- [Link to LinkedIn](https://www.linkedin.com/)
+- [Portfolio](https://mandytsang007.github.io/HMT-Portfolio/)
+- [Github](https://github.com/MANDYTSANG007)
+- [LinkedIn](https://www.linkedin.com/in/mandy-tsang-896b2682)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License 
 
-## Acknowledgments
-
-* Hat tip to anyone whose code, libraries, packages, or UI was used  / inspired from
-* Inspiration
-* etc
