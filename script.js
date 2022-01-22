@@ -5,7 +5,6 @@ var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numeric = "0123456789";
 var specialCh = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"; // use backslash escape character to treat " specially 
 
-
 // Write password to the #password input
 function writePassword(password) {
   var passwordText = document.querySelector("#password");

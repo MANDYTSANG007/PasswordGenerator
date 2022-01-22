@@ -25,15 +25,17 @@ Before generating a password, this program will check if at least one character 
 
 ## Design Layout
 
-![alt text](passwordGenerator.png)
+![alt text](./images/passwordGenerator.png)
+![alt text](./images/passwordGenerator2.png)
+![alt text](./images/passwordGenerator3.png)
 
 ## Authors
 
 * **Mandy Tsang** 
 
-- [Portfolio](https://mandytsang007.github.io/HMT-Portfolio/)
+- [Portfolio](https://mandytsang007.github.io/Mandy-Portfolio/)
 - [Github](https://github.com/MANDYTSANG007)
-- [LinkedIn](https://www.linkedin.com/in/mandy-tsang-896b2682)
+- [LinkedIn](https://www.linkedin.com/in/man-tsang-64308b22a/)
 
 
 ## License
