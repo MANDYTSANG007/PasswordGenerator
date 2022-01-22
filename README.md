@@ -26,8 +26,8 @@ Before generating a password, this program will check if at least one character 
 ## Design Layout
 
 ![alt text](./images/passwordGenerator.png)
-![alt text](./images/passwordGenerator2.png)
-![alt text](./images/passwordGenerator3.png)
+![alt text](./images/PasswordGenerator2.png)
+![alt text](./images/PasswordGenerator3.png)
 
 ## Authors
 
