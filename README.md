@@ -33,7 +33,7 @@ Before generating a password, this program will check if at least one character 
 
 * **Mandy Tsang** 
 
-- [Portfolio](https://mandytsang007.github.io/Mandy-Portfolio/)
+- [Portfolio](https://mandytsang007.github.io/new-portfolio/)
 - [Github](https://github.com/MANDYTSANG007)
 - [LinkedIn](https://www.linkedin.com/in/man-tsang-64308b22a/)
 
