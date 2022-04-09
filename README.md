@@ -29,7 +29,7 @@ coming soon!
 
 ## Authors
 
-* **Mandy Tsang** 
+**Mandy Tsang** 
 
 - [Portfolio](https://mandytsang007.github.io/new-portfolio/)
 - [Github](https://github.com/MANDYTSANG007)
