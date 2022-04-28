@@ -20,7 +20,7 @@ Before generating a password, this program will check if at least one character 
 
 ## Deployed Link
 
-* [Deployed Link to Live Site](https://mandytsang007.github.io/PasswordGenerator/)
+* [Link to Live Site](https://mandytsang007.github.io/PasswordGenerator/)
 * [Link to Github](https://github.com/MANDYTSANG007/PasswordGenerator)
 
 ## Design Layout
