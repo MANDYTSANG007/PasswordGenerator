@@ -1,6 +1,6 @@
 # Password Generator
 
-This Password Generator project is modified using JavaScript. It allows employees to generate a random password based on five criteria: password length, lowercase characters, uppercase characters, numeric numbers, and special characters. 
+Password Generator is created using JavaScript. It allows employees to generate a random password based on five criteria: password length, lowercase characters, uppercase characters, numeric numbers, and special characters. 
 
 
 ## Getting Started
